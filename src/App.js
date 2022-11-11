@@ -8,6 +8,7 @@ import FinalFormSubmission from './components/FinalFormSubmission/FinalFormSubmi
 import LandingPage from './components/LandingPage/LandingPage';
 import SuccessPage from './components/SuccessPage/SuccessPage';
 import TreatmentSelection from './components/TreatmentSelection/TreatmentSelection';
+import DesignSystem from './components/DesignSystem/DesignSystem';
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     {
       path: "success-page",
       element: <SuccessPage />,
+    },
+    {
+      path: "design-system",
+      element: <DesignSystem />,
     },
   ]);
 
