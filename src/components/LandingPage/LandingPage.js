@@ -1,12 +1,15 @@
 import react from 'react';
+import * as GS from '../Styles/GeneralStyles.styles';
 
 const LandingPage = () => {
     const text = "Landing Page";
 
     return (
-      <div>
-        <p>{text}</p>
-      </div>
+      <GS.Section>
+        <GS.Container>
+          {text}
+        </GS.Container>
+      </GS.Section>
     )
 }
 
