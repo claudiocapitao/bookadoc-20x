@@ -6,6 +6,7 @@ import Text from '../../Atoms/Text/Text';
 import Button from '../../Atoms/Button/Button';
 import { colors } from '../../Styles/StyleUtilities';
 import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
+import Card from '../../Molecules/Card/Card'
 
 const LandingPage = () => {
 
@@ -102,7 +103,7 @@ const LandingPage = () => {
             </S.ElementDescription>
           </S.SetOfElements>
 
-           {/* MOLECULES - */}
+           {/* MOLECULE - Title and Description*/}
            <S.SetOfElements>
             <S.SubTitleWrapper>
               <TitleH2>Molecule - Title and Description</TitleH2>
@@ -186,8 +187,130 @@ const LandingPage = () => {
                bottomText='Lorem Ipsum'
             />
             </S.ElementDescription>
+          </S.SetOfElements>
 
-            
+
+
+           {/* MOLECULE - Cards with border*/}
+           <S.SetOfElements>
+            <S.SubTitleWrapper>
+              <TitleH2>Molecule - Cards with border</TitleH2>
+            </S.SubTitleWrapper>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Card with border - quaternary:</Text>
+              <Card
+                quaternary
+                border
+                topText='Lorem Ipsum'
+                title='Treatment Name 01'
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+                 In vitae lorem quis erat pharetra hendrerit ac a purus.'
+                imageName='Arm'
+              />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Card with border - quaternary - no bottom text:</Text>
+              <Card
+                quaternary
+                border
+                topText='Lorem Ipsum'
+                title='Treatment Name 01'
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+                 In vitae lorem quis erat pharetra hendrerit ac a purus.'
+                imageName='Arm'
+              />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Card with border - quinary:</Text>
+              <Card
+                quinary
+                border
+                topText='Lorem Ipsum'
+                title='Treatment Name 01'
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+                 In vitae lorem quis erat pharetra hendrerit ac a purus.'
+                bottomText='25min'
+                imageName='Arm'
+              />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Card with border - quinary - no bottom text:</Text>
+              <Card
+                quinary
+                border
+                topText='Lorem Ipsum'
+                title='Treatment Name 01'
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+                 In vitae lorem quis erat pharetra hendrerit ac a purus.'
+                imageName='Arm'
+              />
+            </S.ElementDescription>
+          </S.SetOfElements>
+
+
+           {/* MOLECULE - Cards with border*/}
+           <S.SetOfElements>
+            <S.SubTitleWrapper>
+              <TitleH2>Molecule - Cards with no border and image top</TitleH2>
+            </S.SubTitleWrapper>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Card with no border and image top - quaternary:</Text>
+              <Card
+                quaternary
+                imageTop
+                topText='Lorem Ipsum'
+                title='Treatment Name 01'
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+                 In vitae lorem quis erat pharetra hendrerit ac a purus.'
+                bottomText='25min'
+                imageName='Arm'
+              />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Card with no border and image top - quaternary - no bottom text:</Text>
+              <Card
+                quaternary
+                imageTop
+                topText='Lorem Ipsum'
+                title='Treatment Name 01'
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+                 In vitae lorem quis erat pharetra hendrerit ac a purus.'
+                imageName='Arm'
+              />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Card with no border and image top - quinary:</Text>
+              <Card
+                quinary
+                imageTop
+                topText='Lorem Ipsum'
+                title='Treatment Name 01'
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+                 In vitae lorem quis erat pharetra hendrerit ac a purus.'
+                bottomText='25min'
+                imageName='Arm'
+              />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Card with no border and image top - quinary - no bottom text:</Text>
+              <Card
+                quinary
+                imageTop
+                topText='Lorem Ipsum'
+                title='Treatment Name 01'
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+                 In vitae lorem quis erat pharetra hendrerit ac a purus.'
+                imageName='Arm'
+              />
+            </S.ElementDescription>
           </S.SetOfElements>
 
         </GS.Container>
