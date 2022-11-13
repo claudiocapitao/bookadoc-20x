@@ -59,8 +59,28 @@ const LandingPage = () => {
             </S.SubTitleWrapper>
 
             <S.ElementDescription>
-              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Normal: </Text>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Text 14px (Default): </Text>
               <Text>Nulla pulvinar pellentesque cursus. Etiam accumsan ultrices metus.</Text>
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Text 14px 500: </Text>
+              <Text fontSize='14px' fontWeight='500'>Nulla pulvinar pellentesque cursus. Etiam accumsan ultrices metus.</Text>
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Text 16px: </Text>
+              <Text fontSize='16px'>Nulla pulvinar pellentesque cursus. Etiam accumsan ultrices metus.</Text>
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Text 16px 500: </Text>
+              <Text fontSize='16px' fontWeight='500'>Nulla pulvinar pellentesque cursus. Etiam accumsan ultrices metus.</Text>
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Text 16px 700 : </Text>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight='700'>Nulla pulvinar pellentesque cursus. Etiam accumsan ultrices metus.</Text>
             </S.ElementDescription>
           </S.SetOfElements>
 
