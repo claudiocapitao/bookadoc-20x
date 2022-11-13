@@ -206,7 +206,7 @@ const LandingPage = () => {
                 title='Treatment Name 01'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
                  In vitae lorem quis erat pharetra hendrerit ac a purus.'
-                imageName='Arm'
+                imageName='pediatrician'
               />
             </S.ElementDescription>
 
@@ -219,7 +219,7 @@ const LandingPage = () => {
                 title='Treatment Name 01'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
                  In vitae lorem quis erat pharetra hendrerit ac a purus.'
-                imageName='Arm'
+                imageName='pediatrician'
               />
             </S.ElementDescription>
 
@@ -233,7 +233,7 @@ const LandingPage = () => {
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
                  In vitae lorem quis erat pharetra hendrerit ac a purus.'
                 bottomText='25min'
-                imageName='Arm'
+                imageName='pediatrician'
               />
             </S.ElementDescription>
 
@@ -246,7 +246,7 @@ const LandingPage = () => {
                 title='Treatment Name 01'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
                  In vitae lorem quis erat pharetra hendrerit ac a purus.'
-                imageName='Arm'
+                imageName='pediatrician'
               />
             </S.ElementDescription>
           </S.SetOfElements>
@@ -268,7 +268,7 @@ const LandingPage = () => {
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
                  In vitae lorem quis erat pharetra hendrerit ac a purus.'
                 bottomText='25min'
-                imageName='Arm'
+                imageName='ophthalmologist'
               />
             </S.ElementDescription>
 
@@ -281,7 +281,7 @@ const LandingPage = () => {
                 title='Treatment Name 01'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
                  In vitae lorem quis erat pharetra hendrerit ac a purus.'
-                imageName='Arm'
+                imageName='ophthalmologist'
               />
             </S.ElementDescription>
 
@@ -295,7 +295,7 @@ const LandingPage = () => {
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
                  In vitae lorem quis erat pharetra hendrerit ac a purus.'
                 bottomText='25min'
-                imageName='Arm'
+                imageName='ophthalmologist'
               />
             </S.ElementDescription>
 
@@ -308,7 +308,7 @@ const LandingPage = () => {
                 title='Treatment Name 01'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
                  In vitae lorem quis erat pharetra hendrerit ac a purus.'
-                imageName='Arm'
+                imageName='ophthalmologist'
               />
             </S.ElementDescription>
           </S.SetOfElements>

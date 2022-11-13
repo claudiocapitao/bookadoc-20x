@@ -3,8 +3,26 @@ import * as S from './TreatmentSelection.styles';
 import * as GS from '../../Styles/GeneralStyles.styles';
 import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
 import Card from '../../Molecules/Card/Card'
+import { treatmentCardsContent, infoCardsContent } from './TreatmentSelection.content';
+import { useNavigate } from "react-router-dom";
 
 const TreatmentSelection = () => {
+  const navigate = useNavigate();
+
+  const availableTretments = [
+    'ophthalmologist',
+    'orthopedistHand',
+    'orthopedistFeet',
+    'orthopedistArm',
+    'pediatrician',
+    'otolaryngologist'
+  ];
+
+  const infoCards = [
+    'superiorHealthcare',
+    'fastHealthcare',
+    'secureHealthcare'
+  ];
 
   return (
     <GS.Section>
@@ -26,103 +44,29 @@ const TreatmentSelection = () => {
           />
         </S.TitleAndDescriptionWrapper>
         <S.CardsWrapper>
+          {availableTretments && availableTretments.map(treatment => 
             <Card
               quinary
               border
-              topText='Lorem Ipsum'
-              title='Treatment Name 01'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
-               In vitae lorem quis erat pharetra hendrerit ac a purus.'
-              bottomText='25min'
-              imageName='Arm'
+              title={treatmentCardsContent?.[treatment].title}
+              text={treatmentCardsContent?.[treatment].text}
+              bottomText={treatmentCardsContent?.[treatment].bottomText}
+              imageName={treatmentCardsContent?.[treatment].imageName}
+              onClick={() => navigate(`/book-appointment/${treatment}`)}
             />
-
-            <Card
-              quinary
-              border
-              topText='Lorem Ipsum'
-              title='Treatment Name 01'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
-               In vitae lorem quis erat pharetra hendrerit ac a purus.'
-              bottomText='25min'
-              imageName='Arm'
-            />
-
-            <Card
-              quinary
-              border
-              topText='Lorem Ipsum'
-              title='Treatment Name 01'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
-               In vitae lorem quis erat pharetra hendrerit ac a purus.'
-              bottomText='25min'
-              imageName='Arm'
-            />
-
-            <Card
-              quinary
-              border
-              topText='Lorem Ipsum'
-              title='Treatment Name 01'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
-               In vitae lorem quis erat pharetra hendrerit ac a purus.'
-              bottomText='25min'
-              imageName='Arm'
-            />
-
-            <Card
-              quinary
-              border
-              topText='Lorem Ipsum'
-              title='Treatment Name 01'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
-               In vitae lorem quis erat pharetra hendrerit ac a purus.'
-              bottomText='25min'
-              imageName='Arm'
-            />
-
-            <Card
-              quinary
-              border
-              topText='Lorem Ipsum'
-              title='Treatment Name 01'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
-               In vitae lorem quis erat pharetra hendrerit ac a purus.'
-              bottomText='25min'
-              imageName='Arm'
-            />
+          )}
         </S.CardsWrapper>
 
         <S.CardsWrapper>
-          <Card
-            quaternary
-            imageTop
-            topText='Lorem Ipsum'
-            title='Treatment Name 01'
-            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
-             In vitae lorem quis erat pharetra hendrerit ac a purus.'
-            imageName='Arm'
-          />
-
-          <Card
-            quaternary
-            imageTop
-            topText='Lorem Ipsum'
-            title='Treatment Name 01'
-            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
-             In vitae lorem quis erat pharetra hendrerit ac a purus.'
-            imageName='Arm'
-          />
-
-          <Card
-            quaternary
-            imageTop
-            topText='Lorem Ipsum'
-            title='Treatment Name 01'
-            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
-             In vitae lorem quis erat pharetra hendrerit ac a purus.'
-            imageName='Arm'
-          />
+          {infoCards && infoCards.map(info => 
+              <Card
+                quaternary
+                imageTop
+                title={infoCardsContent?.[info].title}
+                text={infoCardsContent?.[info].text}
+                imageName={infoCardsContent?.[info].imageName}
+              />
+            )}
         </S.CardsWrapper>
       </GS.Container>
     </GS.Section>
