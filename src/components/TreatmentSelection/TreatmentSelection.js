@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const TreatmentSelection = () => {
   const navigate = useNavigate();
 
-  const availableTretments = [
+  const availableTreatments = [
     'ophthalmologist',
     'orthopedistHand',
     'orthopedistFeet',
@@ -44,7 +44,7 @@ const TreatmentSelection = () => {
           />
         </S.TitleAndDescriptionWrapper>
         <S.CardsWrapper>
-          {availableTretments && availableTretments.map(treatment => 
+          {availableTreatments && availableTreatments.map(treatment => 
             <Card
               quinary
               border
