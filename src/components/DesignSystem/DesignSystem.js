@@ -5,6 +5,7 @@ import {TitleH1, TitleH2, TitleH3, TitleH4, TitleH5, TitleH6} from '../../Atoms/
 import Text from '../../Atoms/Text/Text';
 import Button from '../../Atoms/Button/Button';
 import { colors } from '../../Styles/StyleUtilities';
+import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
 
 const LandingPage = () => {
 
@@ -100,6 +101,95 @@ const LandingPage = () => {
               <Button secundary onClick={() => console.log('Secundary Button')}>Button</Button>
             </S.ElementDescription>
           </S.SetOfElements>
+
+           {/* MOLECULES - */}
+           <S.SetOfElements>
+            <S.SubTitleWrapper>
+              <TitleH2>Molecule - Title and Description</TitleH2>
+            </S.SubTitleWrapper>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Primary:</Text>
+              <TitleAndDescription
+              topText='Lorem Ipsum'
+              title='Lorem Ipsum'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus. In hac habitasse platea 
+               dictumst. Phasellus rutrum in risus nec pulvinar. Vivamus pharetra luctus dapibus. 
+               Integer volutpat urna nisl. Aliquam at pellentesque justo, sit amet fermentum nibh. 
+               Nullam posuere tincidunt tincidunt. Pellentesque congue ligula massa, sed accumsan 
+               lectus efficitur vitae. Ut porttitor ullamcorper risus, ac posuere arcu tempor eget.'
+              bottomText='Lorem Ipsum'
+            />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Secundary:</Text>
+              <TitleAndDescription
+              secundary
+              topText='Lorem Ipsum'
+              title='Lorem Ipsum'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus. In hac habitasse platea 
+               dictumst. Phasellus rutrum in risus nec pulvinar. Vivamus pharetra luctus dapibus. 
+               Integer volutpat urna nisl. Aliquam at pellentesque justo, sit amet fermentum nibh. 
+               Nullam posuere tincidunt tincidunt. Pellentesque congue ligula massa, sed accumsan 
+               lectus efficitur vitae. Ut porttitor ullamcorper risus, ac posuere arcu tempor eget.'
+               bottomText='Lorem Ipsum'
+            />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Tertiary:</Text>
+              <TitleAndDescription
+              tertiary
+              topText='Lorem Ipsum'
+              title='Lorem Ipsum'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus. In hac habitasse platea 
+               dictumst. Phasellus rutrum in risus nec pulvinar. Vivamus pharetra luctus dapibus. 
+               Integer volutpat urna nisl. Aliquam at pellentesque justo, sit amet fermentum nibh. 
+               Nullam posuere tincidunt tincidunt. Pellentesque congue ligula massa, sed accumsan 
+               lectus efficitur vitae. Ut porttitor ullamcorper risus, ac posuere arcu tempor eget.'
+               bottomText='Lorem Ipsum'
+            />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Quaternary:</Text>
+              <TitleAndDescription
+              quaternary
+              topText='Lorem Ipsum'
+              title='Lorem Ipsum'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus. In hac habitasse platea 
+               dictumst. Phasellus rutrum in risus nec pulvinar. Vivamus pharetra luctus dapibus. 
+               Integer volutpat urna nisl. Aliquam at pellentesque justo, sit amet fermentum nibh. 
+               Nullam posuere tincidunt tincidunt. Pellentesque congue ligula massa, sed accumsan 
+               lectus efficitur vitae. Ut porttitor ullamcorper risus, ac posuere arcu tempor eget.'
+               bottomText='Lorem Ipsum'
+            />
+            </S.ElementDescription>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Quinary:</Text>
+              <TitleAndDescription
+              quinary
+              topText='Lorem Ipsum'
+              title='Lorem Ipsum'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus. In hac habitasse platea 
+               dictumst. Phasellus rutrum in risus nec pulvinar. Vivamus pharetra luctus dapibus. 
+               Integer volutpat urna nisl. Aliquam at pellentesque justo, sit amet fermentum nibh. 
+               Nullam posuere tincidunt tincidunt. Pellentesque congue ligula massa, sed accumsan 
+               lectus efficitur vitae. Ut porttitor ullamcorper risus, ac posuere arcu tempor eget.'
+               bottomText='Lorem Ipsum'
+            />
+            </S.ElementDescription>
+
+            
+          </S.SetOfElements>
+
         </GS.Container>
       </GS.Section>
     )

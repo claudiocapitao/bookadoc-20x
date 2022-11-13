@@ -6,7 +6,12 @@ import Text from '../../Atoms/Text/Text';
 import Button from '../../Atoms/Button/Button';
 import { colors } from '../../Styles/StyleUtilities';
 
-const TitleAndDescription = ({ secundary, tertiary, topText, title, text }) => {
+const TitleAndDescription = ({ secundary, tertiary, quaternary, quinary, topText, title, text, bottomText }) => {
+  const titlePrimaryH1Conditional = title && !secundary && !tertiary && !quaternary && !quinary;
+  const titlesecundaryH2Conditional = title && secundary && !tertiary && !quaternary && !quinary;
+  const titletertiaryH3Conditional = title && tertiary && !secundary && !quaternary && !quinary;
+  const titlequaternaryH4Conditional = title && quaternary && !secundary && !tertiary && !quinary;
+  const titlequinaryH5Conditional = title && quinary && !secundary && !tertiary && !quaternary;
 
   return (
     <S.Wrapper>
@@ -19,14 +24,21 @@ const TitleAndDescription = ({ secundary, tertiary, topText, title, text }) => {
           >{topText}</Text>
         </S.TopTextWrapper>
       }
-      {!secundary && !tertiary && <TitleH1>{title}</TitleH1>}
-      {secundary && !tertiary && <TitleH2>{title}</TitleH2>}
-      {tertiary && !secundary && <TitleH3>{title}</TitleH3>}
-      <S.TextWrapper>
-        <Text fontSize={tertiary ? '14px' : secundary ? '16px' : '18px'}>
+      {titlePrimaryH1Conditional && <TitleH1>{title}</TitleH1>}
+      {titlesecundaryH2Conditional && <TitleH2>{title}</TitleH2>}
+      {titletertiaryH3Conditional && <TitleH3>{title}</TitleH3>}
+      {titlequaternaryH4Conditional && <TitleH4>{title}</TitleH4>}
+      {titlequinaryH5Conditional && <TitleH5>{title}</TitleH5>}
+      {text && <S.TextWrapper>
+        <Text fontSize={quinary ? '12px' : quaternary ? '14px' : tertiary ? '14px' : secundary ? '16px' : '18px'}>
           {text}
         </Text>
-      </S.TextWrapper>
+      </S.TextWrapper>}
+      {bottomText && <S.TextWrapper>
+        <Text fontSize={quinary ? '12px' : quaternary ? '14px' : tertiary ? '14px' : secundary ? '16px' : '18px'}>
+          {bottomText}
+        </Text>
+      </S.TextWrapper>}
     </S.Wrapper>
   )
 }
