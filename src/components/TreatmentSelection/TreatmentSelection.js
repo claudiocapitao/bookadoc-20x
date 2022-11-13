@@ -1,22 +1,43 @@
-import react from 'react';
+import react, {useState, useEffect} from 'react';
 import * as S from './TreatmentSelection.styles';
 import * as GS from '../../Styles/GeneralStyles.styles';
 import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
 import Card from '../../Molecules/Card/Card'
 import { treatmentCardsContent, infoCardsContent } from './TreatmentSelection.content';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const TreatmentSelection = () => {
   const navigate = useNavigate();
 
-  const availableTreatments = [
-    'ophthalmologist',
-    'orthopedistHand',
-    'orthopedistFeet',
-    'orthopedistArm',
-    'pediatrician',
-    'otolaryngologist'
-  ];
+  // Request to get the available treatment
+  /* {
+    availableTreatments:
+    [
+      'ophthalmologist',
+      'orthopedistHand',
+      'orthopedistFeet',
+      'orthopedistArm',
+      'pediatrician',
+      'otolaryngologist'
+    ]
+  } */
+
+  async function getAvailableTreatments() {
+    try {
+      const response = await axios.get('https://run.mocky.io/v3/bb78fcf6-075f-4b20-a58f-4bd96e11024d');
+      const availableTreatments = response.data.availableTreatments;
+      console.log('availableTreatments: ', availableTreatments);
+      setAvailableTreatments(availableTreatments)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const [availableTreatments, setAvailableTreatments] = useState([]);
+  useEffect(() => {
+    getAvailableTreatments();
+  }, [])
 
   const infoCards = [
     'superiorHealthcare',
