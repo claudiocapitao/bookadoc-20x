@@ -1,6 +1,6 @@
 // Reference for colors used
 export const colors = {
-  text: '#0262626',
+  text: '#262626',
   borderButton: '#ededed',
   textOrange: '#feceaa',
   secondbackground:'#fff6ef',

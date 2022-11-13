@@ -1,5 +1,7 @@
 import react from 'react';
-import * as GS from '../Styles/GeneralStyles.styles';
+import * as GS from '../../Styles/GeneralStyles.styles';
+import Text from '../../Atoms/Text/Text';
+import Button from '../../Atoms/Button/Button';
 
 const LandingPage = () => {
     const text = "Landing Page";
@@ -7,7 +9,10 @@ const LandingPage = () => {
     return (
       <GS.Section>
         <GS.Container>
-          {text}
+          <Text>
+            {text}
+          </Text>
+          <Button onClick={() => console.log('Test')}>Get Started</Button>
         </GS.Container>
       </GS.Section>
     )

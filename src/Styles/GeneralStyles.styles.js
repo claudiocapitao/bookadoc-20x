@@ -5,7 +5,7 @@ export const Section = styled.section``;
 
 export const Container = styled.div`
   padding: 16px;
-  background-color: ${colors.secondbackground};
+  /* background-color: ${colors.secondbackground}; */
 
   @media ${devices.tablet} {
   max-width: 600px;
