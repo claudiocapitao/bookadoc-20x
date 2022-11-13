@@ -3,7 +3,7 @@ import { colors, devices } from '../../Styles/StyleUtilities';
 
 export const StyledButton = styled.button`
   margin: unset;
-  padding: 8px 20px;
+  padding: 14px 24px;
   font-size: 14px;
   font-weight: 400;
   color: ${({ secundary }) => secundary ? colors.text : colors.white};
