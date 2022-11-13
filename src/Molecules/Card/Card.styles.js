@@ -14,7 +14,7 @@ export const Wrapper = styled.section`
   gap: 24px;
 
   &:hover {
-    cursor: pointer;
+    cursor: ${({ activeHover }) => activeHover ? 'pointer' : 'unset'};
   }
 `;
 

@@ -10,7 +10,7 @@ import TitleAndDescription from '../TitleAndDescription/TitleAndDescription'
 const Card = ({ quaternary, quinary, imageTop, border, title, text, bottomText, imageName, onClick }) => {
 
   return (
-    <S.Wrapper imageTop={imageTop} border={border} onClick={() => onClick()} >
+    <S.Wrapper imageTop={imageTop} border={border} onClick={() => onClick()} activeHover={!!onClick}>
       {imageName && <S.ImageWrapper>
         <S.Image src={require(`../../assets/images/${imageName}.svg`)} />
       </S.ImageWrapper>}
