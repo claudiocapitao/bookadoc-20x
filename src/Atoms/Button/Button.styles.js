@@ -10,4 +10,7 @@ export const StyledButton = styled.button`
   background-color: ${({ secundary }) => secundary ? 'transparent' : colors.primarybutton};
   border: ${({ secundary }) => secundary ? `1px solid ${colors.text}` : 'none'};
   border-radius: 8px;
+  &:hover {
+    cursor: pointer;
+  }
 `;

@@ -72,12 +72,12 @@ const LandingPage = () => {
 
             <S.ElementDescription>
               <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Primary Button: </Text>
-              <Button onclick={() => console.log('Primary Button')}>Button</Button>
+              <Button onClick={() => console.log('Primary Button')}>Button</Button>
             </S.ElementDescription>
 
             <S.ElementDescription>
               <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Secundary Button: </Text>
-              <Button secundary onclick={() => console.log('Secundary Button')}>Button</Button>
+              <Button secundary onClick={() => console.log('Secundary Button')}>Button</Button>
             </S.ElementDescription>
           </S.SetOfElements>
         </GS.Container>
