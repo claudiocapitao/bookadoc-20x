@@ -6,13 +6,23 @@ import Text from '../../Atoms/Text/Text';
 import Button from '../../Atoms/Button/Button';
 import { colors } from '../../Styles/StyleUtilities';
 
-const TitleAndDescription = ({ title, text }) => {
+const TitleAndDescription = ({ secundary, topText, title, text }) => {
 
   return (
     <S.Wrapper>
-      <TitleH1>{title}</TitleH1>
+      {!!topText && 
+        <S.TopTextWrapper>
+          <Text
+            fontSize='16px'
+            fontColor={colors.textOrange}
+            fontWeight={700}
+          >{topText}</Text>
+        </S.TopTextWrapper>
+      }
+      {!secundary && <TitleH1>{title}</TitleH1>}
+      {secundary && <TitleH2>{title}</TitleH2>}
       <S.TextWrapper>
-        <Text fontSize={'16px'}>
+        <Text fontSize={secundary ? '14px' : '16px'}>
           {text}
         </Text>
       </S.TextWrapper>

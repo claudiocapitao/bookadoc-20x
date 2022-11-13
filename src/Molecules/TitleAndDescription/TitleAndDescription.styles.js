@@ -3,10 +3,13 @@ import { colors, devices } from '../../Styles/StyleUtilities';
 
 export const Wrapper = styled.section`
   max-width: 700px;
-  margin-top: 96px;
+`;
+
+export const TopTextWrapper = styled.div`
+  margin-bottom: 2px;
 `;
 
 export const TextWrapper = styled.div`
-  width: 90%;
-  margin-top: 16px;
+  width: '80%';
+  margin-top: 14px;
 `;
