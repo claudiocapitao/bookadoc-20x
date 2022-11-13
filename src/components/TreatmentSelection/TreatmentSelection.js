@@ -52,7 +52,7 @@ const TreatmentSelection = () => {
               text={treatmentCardsContent?.[treatment].text}
               bottomText={treatmentCardsContent?.[treatment].bottomText}
               imageName={treatmentCardsContent?.[treatment].imageName}
-              onClick={() => navigate(`/book-appointment/${treatment}`)}
+              onClick={() => navigate(`/book-appointment/${treatmentCardsContent?.[treatment].url}`)}
             />
           )}
         </S.CardsWrapper>
