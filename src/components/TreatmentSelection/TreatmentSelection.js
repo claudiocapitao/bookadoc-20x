@@ -2,6 +2,7 @@ import react from 'react';
 import * as S from './TreatmentSelection.styles';
 import * as GS from '../../Styles/GeneralStyles.styles';
 import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
+import Card from '../../Molecules/Card/Card'
 
 const TreatmentSelection = () => {
 
@@ -24,6 +25,105 @@ const TreatmentSelection = () => {
             eiusmod tempor incididunt ut labore.'
           />
         </S.TitleAndDescriptionWrapper>
+        <S.CardsWrapper>
+            <Card
+              quinary
+              border
+              topText='Lorem Ipsum'
+              title='Treatment Name 01'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus.'
+              bottomText='25min'
+              imageName='Arm'
+            />
+
+            <Card
+              quinary
+              border
+              topText='Lorem Ipsum'
+              title='Treatment Name 01'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus.'
+              bottomText='25min'
+              imageName='Arm'
+            />
+
+            <Card
+              quinary
+              border
+              topText='Lorem Ipsum'
+              title='Treatment Name 01'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus.'
+              bottomText='25min'
+              imageName='Arm'
+            />
+
+            <Card
+              quinary
+              border
+              topText='Lorem Ipsum'
+              title='Treatment Name 01'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus.'
+              bottomText='25min'
+              imageName='Arm'
+            />
+
+            <Card
+              quinary
+              border
+              topText='Lorem Ipsum'
+              title='Treatment Name 01'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus.'
+              bottomText='25min'
+              imageName='Arm'
+            />
+
+            <Card
+              quinary
+              border
+              topText='Lorem Ipsum'
+              title='Treatment Name 01'
+              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+               In vitae lorem quis erat pharetra hendrerit ac a purus.'
+              bottomText='25min'
+              imageName='Arm'
+            />
+        </S.CardsWrapper>
+
+        <S.CardsWrapper>
+          <Card
+            quaternary
+            imageTop
+            topText='Lorem Ipsum'
+            title='Treatment Name 01'
+            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+             In vitae lorem quis erat pharetra hendrerit ac a purus.'
+            imageName='Arm'
+          />
+
+          <Card
+            quaternary
+            imageTop
+            topText='Lorem Ipsum'
+            title='Treatment Name 01'
+            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+             In vitae lorem quis erat pharetra hendrerit ac a purus.'
+            imageName='Arm'
+          />
+
+          <Card
+            quaternary
+            imageTop
+            topText='Lorem Ipsum'
+            title='Treatment Name 01'
+            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta eros.
+             In vitae lorem quis erat pharetra hendrerit ac a purus.'
+            imageName='Arm'
+          />
+        </S.CardsWrapper>
       </GS.Container>
     </GS.Section>
   )

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors, devices } from '../../Styles/StyleUtilities';
 
 export const Wrapper = styled.section`
-  max-width: 400px;
+  max-width: 325px;
   ${({ border }) => border && `padding: 20px;`};
   ${({ border }) => border && `border: 1px solid ${colors.borderButton}`};
   ${({ border }) => border && `border-radius: 16px`};

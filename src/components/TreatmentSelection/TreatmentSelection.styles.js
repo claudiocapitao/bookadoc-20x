@@ -9,3 +9,12 @@ export const TitleAndDescriptionWrapper = styled.div`
   align-items: center;
   row-gap: 32px;
 `;
+
+export const CardsWrapper = styled.div`
+  padding: 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 16px;
+  row-gap: 24px;
+`;
