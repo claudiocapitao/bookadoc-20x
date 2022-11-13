@@ -3,9 +3,9 @@ export const colors = {
   text: '#262626',
   borderButton: '#ededed',
   textOrange: '#feceaa',
-  secondbackground:'#fff6ef',
-  behindtext: '#fff9f9',
-  primarybutton: '#0d5353',
+  secondBackground:'#fff6ef',
+  behindText: '#fff9f9',
+  primaryButton: '#0d5353',
   white: '#ffffff',
 };
 

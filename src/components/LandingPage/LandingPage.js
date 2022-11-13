@@ -1,18 +1,21 @@
 import react from 'react';
+import * as S from './LandingPage.styles';
 import * as GS from '../../Styles/GeneralStyles.styles';
-import Text from '../../Atoms/Text/Text';
-import Button from '../../Atoms/Button/Button';
+import Nav from './components/Nav/Nav';
 
 const LandingPage = () => {
     const text = "Landing Page";
 
     return (
       <GS.Section>
+        <S.TopWrapper>
+          <GS.Container>
+            <Nav />
+          </GS.Container>
+        </S.TopWrapper>
+        
         <GS.Container>
-          <Text>
-            {text}
-          </Text>
-          <Button onClick={() => console.log('Test')}>Get Started</Button>
+          <p>DIV</p>
         </GS.Container>
       </GS.Section>
     )
