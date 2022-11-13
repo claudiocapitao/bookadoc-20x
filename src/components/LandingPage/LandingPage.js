@@ -6,7 +6,6 @@ import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDes
 import ButtonsAndText from './components/ButtonsAndText/ButtonsAndText';
 
 const LandingPage = () => {
-    const text = "Landing Page";
 
     return (
       <GS.Section>

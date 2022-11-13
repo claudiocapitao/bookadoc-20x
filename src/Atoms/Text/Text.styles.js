@@ -6,4 +6,5 @@ export const TextA = styled.p`
   font-size: ${({fontSize}) => fontSize ?? '14px'};
   font-weight: ${({fontWeight}) => fontWeight ?? '400'};
   color: ${({fontColor}) => fontColor ?? colors.text};
+  
 `;

@@ -6,7 +6,7 @@ import Text from '../../Atoms/Text/Text';
 import Button from '../../Atoms/Button/Button';
 import { colors } from '../../Styles/StyleUtilities';
 
-const TitleAndDescription = ({ secundary, topText, title, text }) => {
+const TitleAndDescription = ({ secundary, tertiary, topText, title, text }) => {
 
   return (
     <S.Wrapper>
@@ -19,10 +19,11 @@ const TitleAndDescription = ({ secundary, topText, title, text }) => {
           >{topText}</Text>
         </S.TopTextWrapper>
       }
-      {!secundary && <TitleH1>{title}</TitleH1>}
-      {secundary && <TitleH2>{title}</TitleH2>}
+      {!secundary && !tertiary && <TitleH1>{title}</TitleH1>}
+      {secundary && !tertiary && <TitleH2>{title}</TitleH2>}
+      {tertiary && !secundary && <TitleH3>{title}</TitleH3>}
       <S.TextWrapper>
-        <Text fontSize={secundary ? '14px' : '16px'}>
+        <Text fontSize={tertiary ? '14px' : secundary ? '16px' : '18px'}>
           {text}
         </Text>
       </S.TextWrapper>
