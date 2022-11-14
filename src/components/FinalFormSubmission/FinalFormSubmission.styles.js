@@ -10,12 +10,18 @@ export const TitleAndDescriptionWrapper = styled.div`
   row-gap: 64px;
 `;
 
-export const CardsWrapper = styled.div`
-  padding: 24px 0;
-  margin-top: 32px;
+export const Form = styled.form`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+`;
+
+export const FormSubCointainer = styled.div`
+  width: 500px;
+  margin: 8px 0 20px;
+  display: flex;
   justify-content: space-between;
-  column-gap: 16px;
-  row-gap: 24px;
+  column-gap: 64px;
+  &:first-Child {
+
+  }
 `;

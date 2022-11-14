@@ -3,9 +3,11 @@ import { colors, devices } from '../../Styles/StyleUtilities';
 
 export const Wrapper = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const Input = styled.input`
+  width: 100%;
   margin: unset;
   padding: 16px 24px;
   font-size: 14px;

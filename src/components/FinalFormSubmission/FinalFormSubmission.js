@@ -8,14 +8,24 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Routes, Route, useParams } from 'react-router-dom';
 import InputField from '../../Atoms/InputField/InputField';
+import Checkbox from '../../Atoms/Checkbox/Checkbox';
+import Text from '../../Atoms/Text/Text';
+import Button from '../../Atoms/Button/Button';
 
 const BookAppointment = () => {
-  const [selectedDoctor, setSelectedDoctor] = useState('');
-
   const navigate = useNavigate();
-  let { treatment } = useParams();
 
+  const [ gender, setGender ] = useState('');
   const [ firstName, setFirstName ] = useState('');
+  const [ lastName, setLastName ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ day, setDay ] = useState('');
+  const [ month, setMonth ] = useState('');
+  const [ year, setYear ] = useState('');
+  const [ checkbox, setCheckbox ] = useState(false);
+
+  const isFormCompleted = firstName && lastName && email && day && month && year &&  checkbox
+  console.log('isFormCompleted: ', isFormCompleted);
 
   return (
     <GS.Section>
@@ -35,8 +45,31 @@ const BookAppointment = () => {
             text='Please fill in your personal data.'
           />
         </S.TitleAndDescriptionWrapper>
+        <S.Form>
+          <S.FormSubCointainer>
+            <InputField type='text' placeholder='First Name' value={firstName} onChange={setFirstName} />
+            <InputField type='text' placeholder='Last Name' value={lastName} onChange={setLastName} />
+          </S.FormSubCointainer>
+          <S.FormSubCointainer>
+            <InputField type='email' placeholder='E-mail Address' value={email} onChange={setEmail} />
+          </S.FormSubCointainer>
 
-        <InputField type='text' placeholder='First Name' value={firstName} onChange={setFirstName} />
+          <Text fontSize='16px' fontWeight='500'>Birthday</Text>
+
+          <S.FormSubCointainer>
+            <InputField type='number' placeholder='Day' value={day} onChange={setDay} />
+            <InputField type='number' placeholder='Month' value={month} onChange={setMonth} />
+            <InputField type='number' placeholder='Year' value={year} onChange={setYear} />
+          </S.FormSubCointainer>
+
+          <S.FormSubCointainer>
+            <Checkbox type='checkbox' placeholder='Day' value={checkbox} onChange={setCheckbox} text='I accept the terms and conditions' />
+          </S.FormSubCointainer>
+          
+          <S.FormSubCointainer>
+            <Button onClick={() => navigate("/treatment-selection")}>Register selected appointment</Button>
+          </S.FormSubCointainer>
+        </S.Form>
       </GS.Container>
     </GS.Section>
   )
