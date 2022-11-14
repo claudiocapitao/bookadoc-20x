@@ -8,7 +8,7 @@ export const Container = styled.div`
   /* background-color: ${colors.secondbackground}; */
 
   @media ${devices.tablet} {
-  max-width: 600px;
+  max-width: 800px;
   padding: 20px;
   margin: 0 auto;
   }

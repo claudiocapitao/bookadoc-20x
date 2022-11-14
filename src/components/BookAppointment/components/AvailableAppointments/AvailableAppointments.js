@@ -6,9 +6,10 @@ import Text from '../../../../Atoms/Text/Text';
 import Button from '../../../../Atoms/Button/Button'
 import { colors } from '../../../../Styles/StyleUtilities';
 import BasicCard from '../BasicCard/BasicCard';
+import AppointmentSelectionBox from '../AppointmentSelectionBox/AppointmentSelectionBox';
 
 const AvailableAppointments = ({
-  times,
+  doctorsAndTimes,
   selectedAppointment,
   setSelectedAppointment
 }) => {
@@ -16,6 +17,11 @@ const AvailableAppointments = ({
   return (
     <S.Wrapper>
       <TitleH5>Available Appointments</TitleH5>
+      <S.AppointmentsBoxesWrapper>
+        {doctorsAndTimes && doctorsAndTimes.map((time)=> 
+          <AppointmentSelectionBox time={time} selectedTime={selectedAppointment} onClick={setSelectedAppointment} />
+        )}
+      </S.AppointmentsBoxesWrapper>
     </S.Wrapper>
   )
 }

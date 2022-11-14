@@ -19,3 +19,12 @@ export const CardsWrapper = styled.div`
   column-gap: 16px;
   row-gap: 24px;
 `;
+
+export const SelectAppointmentWrapper = styled.div`
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 16px;
+`;

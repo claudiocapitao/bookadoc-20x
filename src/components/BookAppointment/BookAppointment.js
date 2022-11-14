@@ -10,11 +10,13 @@ import { Routes, Route, useParams } from 'react-router-dom';
 import WhoShouldTreatYou from './components/WhoShouldTreatYou/WhoShouldTreatYou';
 import AvailableDates from './components/AvailableDates/AvailableDates';
 import AvailableAppointments from './components/AvailableAppointments/AvailableAppointments';
+import Button from '../../Atoms/Button/Button';
 
 const BookAppointment = () => {
   const [selectedDoctor, setSelectedDoctor] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedAppointment, setSelectedAppointment] = useState('');
+  console.log('selectedAppointment: ', selectedAppointment);
 
   const navigate = useNavigate();
   let { treatment } = useParams();
@@ -47,6 +49,8 @@ const BookAppointment = () => {
       speciality: 'Ophthalmologist'
     },
   ];
+
+  const doctorTimes = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', ];
 
   // Request to get the available treatment
   /* async function getAvailableTreatments() {
@@ -90,23 +94,27 @@ const BookAppointment = () => {
           />
         </S.CardsWrapper>
 
-        <WhoShouldTreatYou
-          doctorsAndTimes={doctorsAndTimes}
-          selectedDoctor={selectedDoctor}
-          setSelectedDoctor={setSelectedDoctor}
-        /> 
+        <S.SelectAppointmentWrapper>
+          <WhoShouldTreatYou
+            doctorsAndTimes={doctorsAndTimes}
+            selectedDoctor={selectedDoctor}
+            setSelectedDoctor={setSelectedDoctor}
+          /> 
 
-        <AvailableDates
-          times={doctorsAndTimes}
-          selectedDate={selectedDate}
-          setSelectedDate={setSelectedDate}
-        />
+          <AvailableDates
+            times={doctorsAndTimes}
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+          />
 
-        <AvailableAppointments
-          times={doctorsAndTimes}
-          selectedAppointment={selectedAppointment}
-          setSelectedAppointment={setSelectedAppointment}
-        />
+          <AvailableAppointments
+            doctorsAndTimes={doctorTimes}
+            selectedAppointment={selectedAppointment}
+            setSelectedAppointment={setSelectedAppointment}
+          />
+        </S.SelectAppointmentWrapper>
+
+        <Button onClick={() => {navigate("/final-form-submission");}}>Register for Appointment</Button>
       </GS.Container>
     </GS.Section>
   )
