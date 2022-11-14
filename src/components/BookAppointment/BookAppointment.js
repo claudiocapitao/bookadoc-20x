@@ -9,10 +9,12 @@ import axios from 'axios';
 import { Routes, Route, useParams } from 'react-router-dom';
 import WhoShouldTreatYou from './components/WhoShouldTreatYou/WhoShouldTreatYou';
 import AvailableDates from './components/AvailableDates/AvailableDates';
+import AvailableAppointments from './components/AvailableAppointments/AvailableAppointments';
 
 const BookAppointment = () => {
   const [selectedDoctor, setSelectedDoctor] = useState('');
-  const [selectedDay, setSelectedDay] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedAppointment, setSelectedAppointment] = useState('');
 
   const navigate = useNavigate();
   let { treatment } = useParams();
@@ -89,15 +91,21 @@ const BookAppointment = () => {
         </S.CardsWrapper>
 
         <WhoShouldTreatYou
-          doctors={doctorsAndTimes}
+          doctorsAndTimes={doctorsAndTimes}
           selectedDoctor={selectedDoctor}
           setSelectedDoctor={setSelectedDoctor}
         /> 
 
         <AvailableDates
           times={doctorsAndTimes}
-          selectedDay={selectedDay}
-          setSelectedDay={setSelectedDay}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
+
+        <AvailableAppointments
+          times={doctorsAndTimes}
+          selectedAppointment={selectedAppointment}
+          setSelectedAppointment={setSelectedAppointment}
         />
       </GS.Container>
     </GS.Section>

@@ -9,13 +9,13 @@ import BasicCard from '../BasicCard/BasicCard';
 
 const AvailableDates = ({
   times,
-  selectedDay,
-  setSelectedDay
+  selectedDate,
+  setSelectedDate
 }) => {
 
   return (
     <S.Wrapper>
-      <TitleH5>Available appointments</TitleH5>
+      <TitleH5>Available Dates</TitleH5>
     </S.Wrapper>
   )
 }
