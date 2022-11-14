@@ -9,6 +9,7 @@ import axios from 'axios';
 import { Routes, Route, useParams } from 'react-router-dom';
 import InputField from '../../Atoms/InputField/InputField';
 import Checkbox from '../../Atoms/Checkbox/Checkbox';
+import Dropbox from '../../Atoms/Dropbox/Dropbox';
 import Text from '../../Atoms/Text/Text';
 import Button from '../../Atoms/Button/Button';
 
@@ -16,6 +17,7 @@ const BookAppointment = () => {
   const navigate = useNavigate();
 
   const [ gender, setGender ] = useState('');
+  console.log('gender: ', gender)
   const [ firstName, setFirstName ] = useState('');
   const [ lastName, setLastName ] = useState('');
   const [ email, setEmail ] = useState('');
@@ -24,8 +26,10 @@ const BookAppointment = () => {
   const [ year, setYear ] = useState('');
   const [ checkbox, setCheckbox ] = useState(false);
 
-  const isFormCompleted = firstName && lastName && email && day && month && year &&  checkbox
+  const isFormCompleted = !!firstName && !!lastName && !!email && !!day && !!month && !!year &&  !!checkbox
   console.log('isFormCompleted: ', isFormCompleted);
+
+  const genderOptions = ['Female', 'Male', 'Gender Fluid', 'Bigender', 'Genderqueer', 'Agender', 'Transgender', 'Other']
 
   return (
     <GS.Section>
@@ -47,6 +51,9 @@ const BookAppointment = () => {
         </S.TitleAndDescriptionWrapper>
         <S.Form>
           <S.FormSubCointainer>
+            <Dropbox placeholder='Gender' options={genderOptions} value={gender} onClick={setGender} />
+          </S.FormSubCointainer>
+          <S.FormSubCointainer>
             <InputField type='text' placeholder='First Name' value={firstName} onChange={setFirstName} />
             <InputField type='text' placeholder='Last Name' value={lastName} onChange={setLastName} />
           </S.FormSubCointainer>
@@ -63,7 +70,7 @@ const BookAppointment = () => {
           </S.FormSubCointainer>
 
           <S.FormSubCointainer>
-            <Checkbox type='checkbox' placeholder='Day' value={checkbox} onChange={setCheckbox} text='I accept the terms and conditions' />
+            <Checkbox value={checkbox} onChange={setCheckbox} text='I accept the terms and conditions' />
           </S.FormSubCointainer>
           
           <S.FormSubCointainer>

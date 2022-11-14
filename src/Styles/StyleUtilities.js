@@ -8,6 +8,7 @@ export const colors = {
   behindText: '#fff9f9',
   primaryButton: '#0d5353',
   white: '#ffffff',
+  darGrey: '#7a7a7a'
 };
 
 // Breaking points for @media
