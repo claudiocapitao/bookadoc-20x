@@ -12,12 +12,12 @@ import Checkbox from '../../Atoms/Checkbox/Checkbox';
 import Dropbox from '../../Atoms/Dropbox/Dropbox';
 import Text from '../../Atoms/Text/Text';
 import Button from '../../Atoms/Button/Button';
+import { colors, devices } from '../../Styles/StyleUtilities';
 
 const BookAppointment = () => {
   const navigate = useNavigate();
 
   const [ gender, setGender ] = useState('');
-  console.log('gender: ', gender)
   const [ firstName, setFirstName ] = useState('');
   const [ lastName, setLastName ] = useState('');
   const [ email, setEmail ] = useState('');
@@ -25,11 +25,37 @@ const BookAppointment = () => {
   const [ month, setMonth ] = useState('');
   const [ year, setYear ] = useState('');
   const [ checkbox, setCheckbox ] = useState(false);
+  const [ showErrorMessage, setShowErrorMessage ] = useState(false);
 
-  const isFormCompleted = !!firstName && !!lastName && !!email && !!day && !!month && !!year &&  !!checkbox
+  const isFormCompleted = !!gender && !!firstName && !!lastName && !!email && !!day && !!month && !!year &&  !!checkbox
   console.log('isFormCompleted: ', isFormCompleted);
 
   const genderOptions = ['Female', 'Male', 'Gender Fluid', 'Bigender', 'Genderqueer', 'Agender', 'Transgender', 'Other']
+
+  const [allFormData, setAllFormData] = useState({});
+
+  useEffect(() => {
+    setAllFormData(
+      {
+      gender,
+      firstName,
+      lastName,
+      email,
+      birthdayDate: `${year}/${month}/${day}`,
+      checkbox
+      }
+    );
+  }, [
+    gender,
+    firstName,
+    lastName,
+    email,
+    day,
+    month,
+    year,
+    checkbox
+  ])
+
 
   return (
     <GS.Section>
@@ -49,14 +75,17 @@ const BookAppointment = () => {
             text='Please fill in your personal data.'
           />
         </S.TitleAndDescriptionWrapper>
+
         <S.Form>
           <S.FormSubCointainer>
             <Dropbox placeholder='Gender' options={genderOptions} value={gender} onClick={setGender} />
           </S.FormSubCointainer>
+    
           <S.FormSubCointainer>
             <InputField type='text' placeholder='First Name' value={firstName} onChange={setFirstName} />
             <InputField type='text' placeholder='Last Name' value={lastName} onChange={setLastName} />
           </S.FormSubCointainer>
+
           <S.FormSubCointainer>
             <InputField type='email' placeholder='E-mail Address' value={email} onChange={setEmail} />
           </S.FormSubCointainer>
@@ -73,9 +102,16 @@ const BookAppointment = () => {
             <Checkbox value={checkbox} onChange={setCheckbox} text='I accept the terms and conditions' />
           </S.FormSubCointainer>
           
-          <S.FormSubCointainer>
-            <Button onClick={() => navigate("/treatment-selection")}>Register selected appointment</Button>
-          </S.FormSubCointainer>
+          <S.ButtonCointainer>
+            <Button onClick={() => {
+              if(isFormCompleted){
+                console.log('All data from the form: ', allFormData);
+                navigate("/success-page");
+              } else {
+                setShowErrorMessage(true)
+              }}}>Register Appointment</Button>
+          </S.ButtonCointainer>
+          {showErrorMessage && <Text fontSize='12px' fontWeight='500' fontColor={colors.errorRed}>Error - One of the form fields is not completed</Text>}
         </S.Form>
       </GS.Container>
     </GS.Section>
