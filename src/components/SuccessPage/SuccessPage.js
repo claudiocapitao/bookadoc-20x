@@ -6,7 +6,7 @@ import Card from '../../Molecules/Card/Card';
 import Button from '../../Atoms/Button/Button';
 import { useNavigate } from "react-router-dom";
 
-const TreatmentSelection = () => {
+const SuccessPage = () => {
   const navigate = useNavigate();
 
   return (
@@ -27,4 +27,4 @@ const TreatmentSelection = () => {
   )
 }
 
-export default TreatmentSelection;
+export default SuccessPage;

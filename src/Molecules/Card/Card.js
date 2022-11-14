@@ -7,10 +7,10 @@ import Button from '../../Atoms/Button/Button';
 import { colors } from '../../Styles/StyleUtilities';
 import TitleAndDescription from '../TitleAndDescription/TitleAndDescription'
 
-const Card = ({ quaternary, quinary, imageTop, border, title, text, bottomText, imageName, onClick }) => {
-
+const Card = ({ quaternary, quinary, imageTop, border, title, text, bottomText, imageName, onClick ,maxWidth, alignItems }) => {
+console.log('alignItems: ', alignItems)
   return (
-    <S.Wrapper imageTop={imageTop} border={border} onClick={() => onClick()} activeHover={!!onClick}>
+    <S.Wrapper maxWidth={maxWidth} alignItems={alignItems} imageTop={imageTop} border={border} onClick={() => onClick()} activeHover={!!onClick}>
       {imageName && <S.ImageWrapper>
         <S.Image src={require(`../../assets/images/${imageName}.svg`)} />
       </S.ImageWrapper>}

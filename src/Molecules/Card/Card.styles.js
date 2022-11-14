@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors, devices } from '../../Styles/StyleUtilities';
 
 export const Wrapper = styled.section`
-  max-width: 325px;
+  max-width: ${({ maxWidth }) => maxWidth ?? '325px'};
   ${({ border }) => border && `padding: 20px;`};
   ${({ border }) => border && `border: 1px solid ${colors.borderButton}`};
   ${({ border }) => border && `border-radius: 16px`};
@@ -10,7 +10,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: ${({ imageTop }) => imageTop ? 'column' : 'row'};
   justify-content: ${({ imageTop }) => imageTop ? 'flex-start' : 'center'};
-  align-items: ${({ imageTop }) => imageTop ? 'flex-start' : 'center'};
+  align-items: ${({ imageTop, alignItems }) => alignItems ? alignItems : imageTop ? 'flex-start' : 'center'};
   gap: 24px;
 
   &:hover {
