@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../Atoms/Button/Button';
+import Checkbox from '../../Atoms/Checkbox/Checkbox';
+import Dropbox from '../../Atoms/Dropbox/Dropbox';
+import InputField from '../../Atoms/InputField/InputField';
 import Text from '../../Atoms/Text/Text';
 import { TitleH1, TitleH2, TitleH3, TitleH4, TitleH5, TitleH6 } from '../../Atoms/Title/Title.styles';
 import Card from '../../Molecules/Card/Card';
@@ -9,6 +12,11 @@ import { colors } from '../../Styles/StyleUtilities';
 import * as S from './DesignSystem.styles';
 
 const LandingPage = () => {
+  const [ checkbox, setCheckbox ] = useState(false);
+  const [ dropdownOption, setDropdownOption ] = useState('');
+  const [ inputValue, setInputValue ] = useState('');
+
+  const dropdownOptions = ['Option 1', 'Option 2', 'Option 3']
 
     return (
       <GS.Section>
@@ -313,6 +321,41 @@ const LandingPage = () => {
             </S.ElementDescription>
           </S.SetOfElements>
 
+          {/* CHECKBOX */}
+          <S.SetOfElements>
+            <S.SubTitleWrapper>
+              <TitleH2>Checkbox</TitleH2>
+            </S.SubTitleWrapper>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Checkbox:</Text>
+              <Checkbox value={checkbox} onChange={setCheckbox} text='Lorem ipsum dolor sit amet.' />
+            </S.ElementDescription>
+          </S.SetOfElements>
+
+          {/* DROPDOWN */}
+          <S.SetOfElements>
+            <S.SubTitleWrapper>
+              <TitleH2>Dropdown</TitleH2>
+            </S.SubTitleWrapper>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Dropdown:</Text>
+              <Dropbox placeholder='Gender' options={dropdownOptions} value={dropdownOption} onClick={setDropdownOption} />
+            </S.ElementDescription>
+          </S.SetOfElements>
+
+          {/* INPUT */}
+          <S.SetOfElements>
+            <S.SubTitleWrapper>
+              <TitleH2>Input</TitleH2>
+            </S.SubTitleWrapper>
+
+            <S.ElementDescription>
+              <Text fontSize='16px' fontColor={colors.textOrange} fontWeight={700}>Input:</Text>
+              <InputField type='text' placeholder='Input a value' value={inputValue} onChange={setInputValue} />
+            </S.ElementDescription>
+          </S.SetOfElements>
         </GS.Container>
       </GS.Section>
     )
