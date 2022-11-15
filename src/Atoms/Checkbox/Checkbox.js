@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import * as S from './Checkbox.styles';
+import React from 'react';
 import Text from '../Text/Text';
+import * as S from './Checkbox.styles';
 
 const Checkbox = ({ value, onChange, text }) => {
 

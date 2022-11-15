@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors, devices } from '../../Styles/StyleUtilities';
 
 export const TitleAndDescriptionWrapper = styled.div`
   max-width: 500px;

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import * as S from './Dropbox.styles';
+import React, { useEffect, useRef, useState } from 'react';
+import { colors } from '../../Styles/StyleUtilities';
 import Text from '../Text/Text';
-import { colors, devices } from '../../Styles/StyleUtilities';
+import * as S from './Dropbox.styles';
 
 const Dropbox = ({ options, placeholder, value, onClick }) => {
   const [ showOptions, setShowOptions ] = useState(false);

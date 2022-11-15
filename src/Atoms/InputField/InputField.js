@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import * as S from './InputField.styles';
 
 const InputField = ({ type, placeholder, value, onChange, onBlur }) => {

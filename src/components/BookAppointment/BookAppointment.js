@@ -1,16 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import * as S from './BookAppointment.styles';
-import * as GS from '../../Styles/GeneralStyles.styles';
-import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
-import Card from '../../Molecules/Card/Card'
-import { treatmentCardsContent } from '../TreatmentSelection/TreatmentSelection.content';
-import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { Routes, Route, useParams } from 'react-router-dom';
-import WhoShouldTreatYou from './components/WhoShouldTreatYou/WhoShouldTreatYou';
-import AvailableDates from './components/AvailableDates/AvailableDates';
-import AvailableAppointments from './components/AvailableAppointments/AvailableAppointments';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from "react-router-dom";
 import Button from '../../Atoms/Button/Button';
+import Card from '../../Molecules/Card/Card';
+import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription';
+import * as GS from '../../Styles/GeneralStyles.styles';
+import { treatmentCardsContent } from '../TreatmentSelection/TreatmentSelection.content';
+import * as S from './BookAppointment.styles';
+import AvailableAppointments from './components/AvailableAppointments/AvailableAppointments';
+import AvailableDates from './components/AvailableDates/AvailableDates';
+import WhoShouldTreatYou from './components/WhoShouldTreatYou/WhoShouldTreatYou';
 
 const BookAppointment = () => {
   const navigate = useNavigate();

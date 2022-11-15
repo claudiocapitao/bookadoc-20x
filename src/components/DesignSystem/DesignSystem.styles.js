@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors, devices } from '../../Styles/StyleUtilities';
 
 export const SetOfElements = styled.section`
   margin: 96px 0;

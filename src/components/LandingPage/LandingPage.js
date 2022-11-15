@@ -1,9 +1,9 @@
 import React from 'react';
-import * as S from './LandingPage.styles';
+import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription';
 import * as GS from '../../Styles/GeneralStyles.styles';
-import Nav from './components/Nav/Nav';
-import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
 import ButtonsAndText from './components/ButtonsAndText/ButtonsAndText';
+import Nav from './components/Nav/Nav';
+import * as S from './LandingPage.styles';
 
 const LandingPage = () => {
 

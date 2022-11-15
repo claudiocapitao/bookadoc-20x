@@ -1,10 +1,9 @@
-import react, {useState, useEffect} from 'react';
-import * as S from './SuccessPage.styles';
-import * as GS from '../../Styles/GeneralStyles.styles';
-import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription';
-import Card from '../../Molecules/Card/Card';
-import Button from '../../Atoms/Button/Button';
+import React from 'react';
 import { useNavigate } from "react-router-dom";
+import Button from '../../Atoms/Button/Button';
+import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription';
+import * as GS from '../../Styles/GeneralStyles.styles';
+import * as S from './SuccessPage.styles';
 
 const SuccessPage = () => {
   const navigate = useNavigate();

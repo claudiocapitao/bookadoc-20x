@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import * as S from './TitleAndDescription.styles';
-import * as GS from '../../Styles/GeneralStyles.styles';
-import {TitleH1, TitleH2, TitleH3, TitleH4, TitleH5, TitleH6} from '../../Atoms/Title/Title.styles';
+import React from 'react';
 import Text from '../../Atoms/Text/Text';
-import Button from '../../Atoms/Button/Button';
+import { TitleH1, TitleH2, TitleH3, TitleH4, TitleH5 } from '../../Atoms/Title/Title.styles';
 import { colors } from '../../Styles/StyleUtilities';
+import * as S from './TitleAndDescription.styles';
 
 const TitleAndDescription = ({ secundary, tertiary, quaternary, quinary, topText, title, text, bottomText }) => {
   const titlePrimaryH1Conditional = title && !secundary && !tertiary && !quaternary && !quinary;

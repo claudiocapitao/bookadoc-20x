@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, devices } from '../../Styles/StyleUtilities';
+import { colors } from '../../Styles/StyleUtilities';
 
 export const TitleH1 = styled.h1`
   margin: unset;

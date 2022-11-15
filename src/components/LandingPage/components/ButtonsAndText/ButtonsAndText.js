@@ -1,12 +1,8 @@
-import react, {useState, useEffect} from 'react';
-import * as S from './ButtonsAndText.styles';
-import * as GS from '../../../../Styles/GeneralStyles.styles.js';
-import {TitleH1, TitleH2, TitleH3, TitleH4, TitleH5, TitleH6} from '../../../../Atoms/Title/Title.styles';
-import Text from '../../../../Atoms/Text/Text';
-import Button from '../../../../Atoms/Button/Button'
-import { colors } from '../../../../Styles/StyleUtilities';
-import Logo from '../../../../assets/images/Logo.svg'
+import React from 'react';
 import { useNavigate } from "react-router-dom";
+import Button from '../../../../Atoms/Button/Button';
+import Text from '../../../../Atoms/Text/Text';
+import * as S from './ButtonsAndText.styles';
 
 const ButtonsAndText = () => {
   const navigate = useNavigate();

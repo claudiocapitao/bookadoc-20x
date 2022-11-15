@@ -1,13 +1,7 @@
-import react, {useState, useEffect} from 'react';
-import * as S from './Calendar.styles';
-import * as GS from '../../../../Styles/GeneralStyles.styles';
-import {TitleH1, TitleH2, TitleH3, TitleH4, TitleH5, TitleH6} from '../../../../Atoms/Title/Title.styles';
-import Text from '../../../../Atoms/Text/Text';
-import Button from '../../../../Atoms/Button/Button'
-import { colors } from '../../../../Styles/StyleUtilities';
-import BasicCard from '../BasicCard/BasicCard';
+import React, { useState } from 'react';
+import { TitleH6 } from '../../../../Atoms/Title/Title.styles';
 import DaySelectionBox from '../DaySelectionBox/DaySelectionBox';
-import { DateTime } from 'luxon';
+import * as S from './Calendar.styles';
 
 const Calendar = ({
   dates,
@@ -21,9 +15,6 @@ const Calendar = ({
   const weeksToShow = [firstWeekToShow, secondtWeekToShow, thirdWeekToShow];
 
   const [selectedDay, setSelectedDay] = useState(0);
-  console.log('selectedDay: ', selectedDay)
-  console.log('dates: ', dates)
-  console.log('dates: ', dates?.find(date => date.date === 14)?.appointments)
   return (
     <S.Wrapper>
       <TitleH6>October, 2022</TitleH6>

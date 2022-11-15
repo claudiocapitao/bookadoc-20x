@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { colors, devices } from '../../Styles/StyleUtilities';
+import { colors } from '../../Styles/StyleUtilities';
 
-export const TextA = styled.p`
+export const Text = styled.p`
   margin: unset;
   font-size: ${({fontSize}) => fontSize ?? '14px'};
   font-weight: ${({fontWeight}) => fontWeight ?? '400'};

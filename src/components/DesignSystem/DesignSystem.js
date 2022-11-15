@@ -1,12 +1,12 @@
 import React from 'react';
-import * as S from './DesignSystem.styles';
-import * as GS from '../../Styles/GeneralStyles.styles';
-import {TitleH1, TitleH2, TitleH3, TitleH4, TitleH5, TitleH6} from '../../Atoms/Title/Title.styles';
-import Text from '../../Atoms/Text/Text';
 import Button from '../../Atoms/Button/Button';
+import Text from '../../Atoms/Text/Text';
+import { TitleH1, TitleH2, TitleH3, TitleH4, TitleH5, TitleH6 } from '../../Atoms/Title/Title.styles';
+import Card from '../../Molecules/Card/Card';
+import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription';
+import * as GS from '../../Styles/GeneralStyles.styles';
 import { colors } from '../../Styles/StyleUtilities';
-import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
-import Card from '../../Molecules/Card/Card'
+import * as S from './DesignSystem.styles';
 
 const LandingPage = () => {
 

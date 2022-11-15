@@ -4,11 +4,11 @@ import {
   RouterProvider
 } from "react-router-dom";
 import BookAppointment from './components/BookAppointment/BookAppointment';
+import DesignSystem from './components/DesignSystem/DesignSystem';
 import FinalFormSubmission from './components/FinalFormSubmission/FinalFormSubmission';
 import LandingPage from './components/LandingPage/LandingPage';
 import SuccessPage from './components/SuccessPage/SuccessPage';
 import TreatmentSelection from './components/TreatmentSelection/TreatmentSelection';
-import DesignSystem from './components/DesignSystem/DesignSystem';
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     },
   ]);
 
-function App() {
+const App = () => {
   return (
     <RouterProvider router={router} />
   );

@@ -1,11 +1,6 @@
-import react, {useState, useEffect} from 'react';
-import * as S from './DaySelectionBox.styles';
-import * as GS from '../../../../Styles/GeneralStyles.styles';
-import {TitleH1, TitleH2, TitleH3, TitleH4, TitleH5, TitleH6} from '../../../../Atoms/Title/Title.styles';
+import React from 'react';
 import Text from '../../../../Atoms/Text/Text';
-import Button from '../../../../Atoms/Button/Button'
-import { colors } from '../../../../Styles/StyleUtilities';
-import BasicCard from '../BasicCard/BasicCard';
+import * as S from './DaySelectionBox.styles';
 
 const DaySelectionBox = ({
     disabled,

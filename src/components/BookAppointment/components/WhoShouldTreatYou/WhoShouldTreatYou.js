@@ -1,11 +1,7 @@
-import react, {useState, useEffect} from 'react';
-import * as S from './WhoShouldTreatYou.styles';
-import * as GS from '../../../../Styles/GeneralStyles.styles';
-import {TitleH1, TitleH2, TitleH3, TitleH4, TitleH5, TitleH6} from '../../../../Atoms/Title/Title.styles';
-import Text from '../../../../Atoms/Text/Text';
-import Button from '../../../../Atoms/Button/Button'
-import { colors } from '../../../../Styles/StyleUtilities';
+import React from 'react';
+import { TitleH5 } from '../../../../Atoms/Title/Title.styles';
 import BasicCard from '../BasicCard/BasicCard';
+import * as S from './WhoShouldTreatYou.styles';
 
 const WhoShouldTreatYou = ({
   doctorsAndTimes,
