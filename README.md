@@ -29,7 +29,7 @@ The app is divided into a few pages:
 - Book appointment (BookAppointment.js -> "book-appointment/:treatment"): the user can book a doctor and date for the specific treatment selected before
 - Final form submission (FinalFormSubmission.js -> "/final-form-submission"): where the user types user information and registers for the app
 - Success page (SuccessPage.js -> "/success-page"): Where the user knows that the appointment was registered and the user can decide to start the process again
-- Design system (DesignSystem.js -> "/design-system"): Not accessible to the user. It is possible to see most of the design elements used in the app
+- Design system (DesignSystem.js -> "/design-system"): Not accessible to the user unless the user types the url for it. It is possible to see most of the design elements used in the app
 
 ## Atoms folder
 
