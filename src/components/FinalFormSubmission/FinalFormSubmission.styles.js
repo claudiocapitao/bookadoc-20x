@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors, devices } from '../../Styles/StyleUtilities';
 
 export const Wrapper = styled.div`
   max-width: 450px;

@@ -1,18 +1,14 @@
-import react, {useState, useEffect} from 'react';
-import * as S from './FinalFormSubmission.styles';
-import * as GS from '../../Styles/GeneralStyles.styles';
-import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
-import Card from '../../Molecules/Card/Card'
-import { treatmentCardsContent } from '../TreatmentSelection/TreatmentSelection.content';
+import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-import { Routes, Route, useParams } from 'react-router-dom';
-import InputField from '../../Atoms/InputField/InputField';
+import Button from '../../Atoms/Button/Button';
 import Checkbox from '../../Atoms/Checkbox/Checkbox';
 import Dropbox from '../../Atoms/Dropbox/Dropbox';
+import InputField from '../../Atoms/InputField/InputField';
 import Text from '../../Atoms/Text/Text';
-import Button from '../../Atoms/Button/Button';
-import { colors, devices } from '../../Styles/StyleUtilities';
+import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription';
+import * as GS from '../../Styles/GeneralStyles.styles';
+import { colors } from '../../Styles/StyleUtilities';
+import * as S from './FinalFormSubmission.styles';
 
 const BookAppointment = () => {
   const navigate = useNavigate();
@@ -28,7 +24,6 @@ const BookAppointment = () => {
   const [ showErrorMessage, setShowErrorMessage ] = useState(false);
 
   const isFormCompleted = !!gender && !!firstName && !!lastName && !!email && !!day && !!month && !!year &&  !!checkbox
-  console.log('isFormCompleted: ', isFormCompleted);
 
   const genderOptions = ['Female', 'Male', 'Gender Fluid', 'Bigender', 'Genderqueer', 'Agender', 'Transgender', 'Other']
 
@@ -54,7 +49,6 @@ const BookAppointment = () => {
     year,
     checkbox
   ])
-
 
   return (
     <GS.Section>
