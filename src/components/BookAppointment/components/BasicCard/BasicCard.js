@@ -15,7 +15,6 @@ const BasicCard = ({
       {!!doctor.id && <S.Image src={require(`../../../../assets/images/${doctor.id}.jpeg`)} />}
       <S.TextWrapper>
         <Text fontSize='14px' fontWeight='500'>{doctor.name}</Text>
-        {/* <Text fontSize='12px' fontWeight='300'>{doctor.speciality}</Text> */}
       </S.TextWrapper>
     </S.Wrapper>
   )

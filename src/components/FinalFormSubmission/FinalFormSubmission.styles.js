@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  max-width: 450px;
-  margin-top: 48px;
-`;
-
 export const TitleAndDescriptionWrapper = styled.div`
   max-width: 450px;
   padding: 24px 0 24px;
