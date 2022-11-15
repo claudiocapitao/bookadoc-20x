@@ -16,6 +16,7 @@ export const Wrapper = styled.section`
 
   &:hover {
     cursor: pointer;
+    background-color: ${colors.textOrange};
   }
 `;
 

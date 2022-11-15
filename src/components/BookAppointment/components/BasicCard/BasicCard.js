@@ -8,18 +8,18 @@ import { colors } from '../../../../Styles/StyleUtilities';
 
 const BasicCard = ({
   doctor,
-  selectedDoctor,
-  setSelectedDoctor
+  selectedDoctorData,
+  setSelectedDoctorData
 }) => {
 
-  const isDoctorSelected = selectedDoctor === doctor.id;
+  const isDoctorSelected = selectedDoctorData.id === doctor.id;
 
   return (
-    <S.Wrapper isDoctorSelected={isDoctorSelected} onClick={() => setSelectedDoctor(doctor.id)}>
+    <S.Wrapper isDoctorSelected={isDoctorSelected} onClick={() => setSelectedDoctorData(doctor)}>
       {!!doctor.id && <S.Image src={require(`../../../../assets/images/${doctor.id}.jpeg`)} />}
       <S.TextWrapper>
         <Text fontSize='14px' fontWeight='500'>{doctor.name}</Text>
-        <Text fontSize='12px' fontWeight='300'>{doctor.speciality}</Text>
+        {/* <Text fontSize='12px' fontWeight='300'>{doctor.speciality}</Text> */}
       </S.TextWrapper>
     </S.Wrapper>
   )

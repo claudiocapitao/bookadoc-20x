@@ -1,4 +1,4 @@
-import react, {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import * as S from './BookAppointment.styles';
 import * as GS from '../../Styles/GeneralStyles.styles';
 import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription'
@@ -13,61 +13,33 @@ import AvailableAppointments from './components/AvailableAppointments/AvailableA
 import Button from '../../Atoms/Button/Button';
 
 const BookAppointment = () => {
-  const [selectedDoctor, setSelectedDoctor] = useState('');
-  const [selectedDate, setSelectedDate] = useState('');
-  const [selectedAppointment, setSelectedAppointment] = useState('');
-  console.log('selectedAppointment: ', selectedAppointment);
-
   const navigate = useNavigate();
   let { treatment } = useParams();
 
-  const doctorsAndTimes = 
-  [
-    {
-      id: 'doc000',
-      name: 'All Available Appointments',
-      speciality: '20x.health clinic'
-    },
-    {
-      id: 'doc001',
-      name: 'Dr. Lorem Ipsum',
-      speciality: 'Ophthalmologist'
-    },
-    {
-      id: 'doc002',
-      name: 'Dr. Lorem Ipsum',
-      speciality: 'Ophthalmologist'
-    },
-    {
-      id: 'doc003',
-      name: 'Dr. Lorem Ipsum',
-      speciality: 'Ophthalmologist'
-    },
-    {
-      id: 'doc004',
-      name: 'Dr. Lorem Ipsum',
-      speciality: 'Ophthalmologist'
-    },
-  ];
+  const [selectedDoctorData, setSelectedDoctorData] = useState([]);
+  const [selectedDateAndAppointments, setSelectedDateAndAppointments] = useState([]);
+  const [selectedAppointment, setSelectedAppointment] = useState([]);
 
-  const doctorTimes = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', ];
+  useEffect(() => {
+    setSelectedDateAndAppointments([]);
+    setSelectedAppointment([]);
+  }, [selectedDoctorData]);
 
   // Request to get the available treatment
-  /* async function getAvailableTreatments() {
+  async function getDoctorsAndTimes() {
     try {
-      const response = await axios.get('https://run.mocky.io/v3/bb78fcf6-075f-4b20-a58f-4bd96e11024d');
-      const availableTreatments = response.data.availableTreatments;
-      console.log('availableTreatments: ', availableTreatments);
-      setAvailableTreatments(availableTreatments)
+      const response = await axios.get('https://run.mocky.io/v3/0075fec0-6822-4090-9d9c-7d8b84dc57fd');
+      const doctorsAndTimes = response.data.doctorsAndTimes;
+      setDoctorsAndTimes(doctorsAndTimes)
     } catch (error) {
       console.error(error);
     }
   }
 
-  const [availableTreatments, setAvailableTreatments] = useState([]);
+  const [doctorsAndTimes, setDoctorsAndTimes] = useState([]);
   useEffect(() => {
-    getAvailableTreatments();
-  }, []) */
+    getDoctorsAndTimes();
+  }, [])
 
   return (
     <GS.Section>
@@ -97,18 +69,18 @@ const BookAppointment = () => {
         <S.SelectAppointmentWrapper>
           <WhoShouldTreatYou
             doctorsAndTimes={doctorsAndTimes}
-            selectedDoctor={selectedDoctor}
-            setSelectedDoctor={setSelectedDoctor}
+            selectedDoctorData={selectedDoctorData}
+            setSelectedDoctorData={setSelectedDoctorData}
           /> 
 
           <AvailableDates
-            times={doctorsAndTimes}
-            selectedDate={selectedDate}
-            setSelectedDate={setSelectedDate}
+            dates={selectedDoctorData?.datesAndAppointments ?? []}
+            selectedDateAndAppointments={selectedDateAndAppointments}
+            setSelectedDateAndAppointments={setSelectedDateAndAppointments}
           />
 
           <AvailableAppointments
-            doctorsAndTimes={doctorTimes}
+            selectedDateAndAppointments={selectedDateAndAppointments}
             selectedAppointment={selectedAppointment}
             setSelectedAppointment={setSelectedAppointment}
           />

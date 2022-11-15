@@ -5,7 +5,7 @@ export const colors = {
   shadow: '#ededed',
   textOrange: '#feceaa',
   secondBackground:'#fff6ef',
-  behindText: '#fff9f9',
+  behindText: '#faeded',
   primaryButton: '#0d5353',
   white: '#ffffff',
   darGrey: '#7a7a7a',

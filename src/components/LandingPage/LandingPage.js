@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import * as S from './LandingPage.styles';
 import * as GS from '../../Styles/GeneralStyles.styles';
 import Nav from './components/Nav/Nav';

@@ -9,8 +9,8 @@ import BasicCard from '../BasicCard/BasicCard';
 
 const WhoShouldTreatYou = ({
   doctorsAndTimes,
-  selectedDoctor,
-  setSelectedDoctor
+  selectedDoctorData,
+  setSelectedDoctorData
 }) => {
 
   return (
@@ -20,8 +20,8 @@ const WhoShouldTreatYou = ({
         <BasicCard
           key={doctor.id}
           doctor={doctor}
-          selectedDoctor={selectedDoctor}
-          setSelectedDoctor={setSelectedDoctor}
+          selectedDoctorData={selectedDoctorData}
+          setSelectedDoctorData={setSelectedDoctorData}
         />
       )}
     </S.Wrapper>
