@@ -104,7 +104,7 @@ const BookAppointment = () => {
                 setShowErrorMessage(true)
               }}}>Register Appointment</Button>
           </S.ButtonCointainer>
-          {showErrorMessage && <Text fontSize='12px' fontWeight='500' fontColor={colors.errorRed}>Error - One or more fields are not completed</Text>}
+          {showErrorMessage && !isFormCompleted && <Text fontSize='12px' fontWeight='500' fontColor={colors.errorRed}>One or more fields are missing</Text>}
         </S.Form>
       </GS.Container>
     </GS.Section>

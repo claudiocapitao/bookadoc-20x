@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TitleH6 } from '../../../../Atoms/Title/Title.styles';
 import DaySelectionBox from '../DaySelectionBox/DaySelectionBox';
 import * as S from './Calendar.styles';
@@ -15,6 +15,10 @@ const Calendar = ({
   const weeksToShow = [firstWeekToShow, secondtWeekToShow, thirdWeekToShow];
 
   const [selectedDay, setSelectedDay] = useState(0);
+  useEffect(() => {
+    setSelectedDay(0);
+  }, [dates]);
+
   return (
     <S.Wrapper>
       <TitleH6>October, 2022</TitleH6>

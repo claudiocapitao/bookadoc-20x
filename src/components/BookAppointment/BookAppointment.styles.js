@@ -27,3 +27,7 @@ export const SelectAppointmentWrapper = styled.div`
   justify-content: space-between;
   column-gap: 16px;
 `;
+
+export const TextWrapper = styled.div`
+  margin-top: 8px;
+`;

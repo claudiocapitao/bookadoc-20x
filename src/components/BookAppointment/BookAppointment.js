@@ -10,18 +10,30 @@ import * as S from './BookAppointment.styles';
 import AvailableAppointments from './components/AvailableAppointments/AvailableAppointments';
 import AvailableDates from './components/AvailableDates/AvailableDates';
 import WhoShouldTreatYou from './components/WhoShouldTreatYou/WhoShouldTreatYou';
+import Text from '../../Atoms/Text/Text';
+import { colors } from '../../Styles/StyleUtilities';
 
 const BookAppointment = () => {
   const navigate = useNavigate();
   let { treatment } = useParams();
+  const [ showErrorMessage, setShowErrorMessage ] = useState(false);
 
-  const [selectedDoctorData, setSelectedDoctorData] = useState([]);
-  const [selectedDateAndAppointments, setSelectedDateAndAppointments] = useState([]);
-  const [selectedAppointment, setSelectedAppointment] = useState([]);
+  const [selectedDoctorData, setSelectedDoctorData] = useState({});
+  console.log('selectedDoctorData: ', selectedDoctorData)
+  const [selectedDateAndAppointments, setSelectedDateAndAppointments] = useState({});
+  console.log('selectedDateAndAppointments: ', selectedDateAndAppointments)
+  const [selectedAppointment, setSelectedAppointment] = useState('');
+  console.log('selectedAppointment: ', selectedAppointment)
+
+  const [canUserProceed, setCanUserProceed] = useState(false);
+  useEffect(() => {
+    const canUserProceed = !!selectedDoctorData?.id && !!selectedDateAndAppointments?.date && !!selectedAppointment;
+    setCanUserProceed(canUserProceed);
+  }, [selectedDoctorData, selectedDateAndAppointments, selectedAppointment]);
 
   useEffect(() => {
-    setSelectedDateAndAppointments([]);
-    setSelectedAppointment([]);
+    setSelectedDateAndAppointments({});
+    setSelectedAppointment('');
   }, [selectedDoctorData]);
 
   // Request to get the available treatment
@@ -85,7 +97,18 @@ const BookAppointment = () => {
           />
         </S.SelectAppointmentWrapper>
 
-        <Button onClick={() => {navigate("/final-form-submission");}}>Register for Appointment</Button>
+        <Button
+          onClick={() => {
+            if(canUserProceed){
+              console.log('All data from the form: ', 'allFormData');
+              navigate("/final-form-submission")
+            } else {
+              setShowErrorMessage(true)
+          }}}
+        >Register for Appointment</Button>
+        <S.TextWrapper>
+          {showErrorMessage && !canUserProceed && <Text fontSize='12px' fontWeight='500' fontColor={colors.errorRed}>Select an appointment</Text>}
+        </S.TextWrapper>
       </GS.Container>
     </GS.Section>
   )
