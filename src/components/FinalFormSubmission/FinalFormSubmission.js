@@ -33,7 +33,6 @@ const BookAppointment = () => {
   const genderOptions = ['Female', 'Male', 'Gender Fluid', 'Bigender', 'Genderqueer', 'Agender', 'Transgender', 'Other']
 
   const [allFormData, setAllFormData] = useState({});
-
   useEffect(() => {
     setAllFormData(
       {
@@ -93,9 +92,9 @@ const BookAppointment = () => {
           <Text fontSize='16px' fontWeight='500'>Birthday</Text>
 
           <S.FormSubCointainer>
-            <InputField type='number' placeholder='Day' value={day} onChange={setDay} />
-            <InputField type='number' placeholder='Month' value={month} onChange={setMonth} />
-            <InputField type='number' placeholder='Year' value={year} onChange={setYear} />
+            <InputField type='number' onBlur={() => (day < 1 || day > 31) && setDay('')} placeholder='Day' value={day} onChange={setDay} />
+            <InputField type='number' onBlur={() => (month < 1 || month > 12) && setMonth('')} placeholder='Month' value={month} onChange={setMonth} />
+            <InputField type='number' onBlur={() => (year < 1920 || year > 2004) && setYear('')} placeholder='Year' value={year} onChange={setYear} />
           </S.FormSubCointainer>
 
           <S.FormSubCointainer>
