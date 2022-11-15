@@ -30,3 +30,16 @@ The app is divided in a few pages:
 - Final form submission: where the user types user information and registers for the app
 - Success page: Where the user know that the appointment was registered and the user can decide to start the proccess again
 - Design system: can be found in '/design-system'. Not accesible to the user. It is possible to see most of the design elements used in the app
+
+## Atoms folder
+
+- Button: primary and secunday
+- Checkbox: checkbox and possibility to give a text
+- Dropdown: recives an array of elements and shows them after opening
+- InputField: accepts different types of inputs
+- Text: general atomic element to use text and be able to modify text
+- Title: colection of H1 to H6 elements created with styled-compoents
+
+## Design System page - '/design-system'
+
+In this page is possible to see most of the basic units created for the app.
