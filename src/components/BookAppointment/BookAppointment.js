@@ -2,16 +2,16 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 import Button from '../../Atoms/Button/Button';
+import Text from '../../Atoms/Text/Text';
 import Card from '../../Molecules/Card/Card';
 import TitleAndDescription from '../../Molecules/TitleAndDescription/TitleAndDescription';
 import * as GS from '../../Styles/GeneralStyles.styles';
+import { colors } from '../../Styles/StyleUtilities';
 import { treatmentCardsContent } from '../TreatmentSelection/TreatmentSelection.content';
 import * as S from './BookAppointment.styles';
 import AvailableAppointments from './components/AvailableAppointments/AvailableAppointments';
 import AvailableDates from './components/AvailableDates/AvailableDates';
 import WhoShouldTreatYou from './components/WhoShouldTreatYou/WhoShouldTreatYou';
-import Text from '../../Atoms/Text/Text';
-import { colors } from '../../Styles/StyleUtilities';
 
 const BookAppointment = () => {
   const navigate = useNavigate();
@@ -19,11 +19,24 @@ const BookAppointment = () => {
   const [ showErrorMessage, setShowErrorMessage ] = useState(false);
 
   const [selectedDoctorData, setSelectedDoctorData] = useState({});
-  console.log('selectedDoctorData: ', selectedDoctorData)
   const [selectedDateAndAppointments, setSelectedDateAndAppointments] = useState({});
-  console.log('selectedDateAndAppointments: ', selectedDateAndAppointments)
   const [selectedAppointment, setSelectedAppointment] = useState('');
-  console.log('selectedAppointment: ', selectedAppointment)
+
+  // Compile all data to send to back-end
+  const [allBookingData, setAllBookingData] = useState({});
+  useEffect(() => {
+    setAllBookingData(
+      {
+      id: selectedDoctorData?.id,
+      date: selectedDateAndAppointments?.date,
+      appointment: selectedAppointment,
+      }
+    );
+  }, [
+    selectedDoctorData,
+    selectedDateAndAppointments,
+    selectedAppointment,
+  ])
 
   const [canUserProceed, setCanUserProceed] = useState(false);
   useEffect(() => {
@@ -31,6 +44,7 @@ const BookAppointment = () => {
     setCanUserProceed(canUserProceed);
   }, [selectedDoctorData, selectedDateAndAppointments, selectedAppointment]);
 
+  // Clean states when user selects a different doctor
   useEffect(() => {
     setSelectedDateAndAppointments({});
     setSelectedAppointment('');
@@ -100,7 +114,7 @@ const BookAppointment = () => {
         <Button
           onClick={() => {
             if(canUserProceed){
-              console.log('All data from the form: ', 'allFormData');
+              console.log('Data to register the appointment: ', allBookingData);
               navigate("/final-form-submission")
             } else {
               setShowErrorMessage(true)
