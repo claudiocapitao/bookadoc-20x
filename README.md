@@ -4,42 +4,38 @@
 
 - Download repo
 - Inside the repo folder do "npm i" or "yarn install"
-- Now you can start checking how the app looks like :)
+- Now you can start checking what the app looks like :)
 
 ## Folder and File structure in the repo
 
 The "src" folder contains the following folders:
 
-- Assest: contains images (icons and photos) for the app
+- Assets: contains images (icons and photos) for the app
 - Atoms: Very basic reusable components
-- components: This folder contains the the Components that will be rendered on the web app. Inside is possible to find each page folder and sometimes it could contain additionall accessory components
-- Molecules: Components built using Atoms and built with the pourpose to have complex componnents that can be reusable for different situations
-- Styles: Conatins some helper files for: (1) color definition; (2) Sections and Container styled components that can be reused for page layouts
+- components: This folder contains the Components that will be rendered on the web app. Inside is possible to find each page folder and sometimes it could contain additional accessory components
+- Molecules: Components built using Atoms and built with the purpose to have complex components that can be reusable for different situations
+- Styles: Contains some helper files for (1) color definition, (2) Sections and Container styled components that can be reused for page layouts
 
 Other relevant files:
 
-- App.js: contains the routes definiitions for the App
+- App.js: contains the route definitions for the App
 
 ## How does the app look like
 
-The app is divided in a few pages:
+The app is divided into a few pages:
 
-- Landing page
-- Treatment section: the user can select a treatment and will be directed to the treatment specific page
-- Book appointment: the user can book a doctor and date for the specific treatment selected before
-- Final form submission: where the user types user information and registers for the app
-- Success page: Where the user know that the appointment was registered and the user can decide to start the proccess again
-- Design system: can be found in '/design-system'. Not accesible to the user. It is possible to see most of the design elements used in the app
+- Landing page (LandingPage.js -> "/")
+- Treatment section (TreatmentSelection.js -> "/treatment-selection"): the user can select a treatment and will be directed to the treatment-specific page
+- Book appointment (BookAppointment.js -> "book-appointment/:treatment"): the user can book a doctor and date for the specific treatment selected before
+- Final form submission (FinalFormSubmission.js -> "/final-form-submission"): where the user types user information and registers for the app
+- Success page (SuccessPage.js -> "/success-page"): Where the user knows that the appointment was registered and the user can decide to start the process again
+- Design system (DesignSystem.js -> "/design-system"): Not accessible to the user. It is possible to see most of the design elements used in the app
 
 ## Atoms folder
 
-- Button: primary and secunday
+- Button: primary and secondary
 - Checkbox: checkbox and possibility to give a text
-- Dropdown: recives an array of elements and shows them after opening
+- Dropdown: receives an array of elements and shows them after opening
 - InputField: accepts different types of inputs
-- Text: general atomic element to use text and be able to modify text
-- Title: colection of H1 to H6 elements created with styled-compoents
-
-## Design System page - '/design-system'
-
-In this page is possible to see most of the basic units created for the app.
+- Text: the general atomic element to use text and be able to modify text
+- Title: collection of H1 to H6 elements created with styled-components
