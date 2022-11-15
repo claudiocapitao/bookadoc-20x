@@ -39,3 +39,8 @@ The app is divided into a few pages:
 - InputField: accepts different types of inputs
 - Text: the general atomic element to use text and be able to modify text
 - Title: collection of H1 to H6 elements created with styled-components
+
+## Molecules folder
+
+- Card: used to show the available treatments in the app or to show the info cards on the BookAppointment page
+- TitleAndDescription: A component that can render a combination of Title, Subtitle, and Text with different font-sizes
